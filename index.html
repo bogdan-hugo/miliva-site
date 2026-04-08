@@ -22,10 +22,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- CSS -->
-<link rel="stylesheet" href="css/variables.css?v=13">
-<link rel="stylesheet" href="css/base.css?v=13">
-<link rel="stylesheet" href="css/components.css?v=13">
-<link rel="stylesheet" href="css/animations.css?v=13">
+<link rel="stylesheet" href="css/variables.css?v=14">
+<link rel="stylesheet" href="css/base.css?v=14">
+<link rel="stylesheet" href="css/components.css?v=14">
+<link rel="stylesheet" href="css/animations.css?v=14">
 </head>
 <body>
 
@@ -477,20 +477,75 @@
 
 
 <!-- ════════════════════════════════════════════════════════
-     SECTIONS 8–10: Coming in Round 5
+     REPAIR FACILITY
      ════════════════════════════════════════════════════════ -->
+<section class="section section--alt" id="facility">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">07</div>
+      <div class="section-title">Repair Facility</div>
+    </div>
+
+    <div class="facility reveal">
+      <div class="facility__intro">
+        <h2 class="facility__heading">Our Own Shop.<br><em>In Illinois.</em></h2>
+        <p class="lead">We don't outsource repairs. Our facility handles maintenance, inspections, and breakdowns — keeping trucks on the road and downtime to a minimum.</p>
+      </div>
+
+      <div class="facility__media">
+        <!-- Video placeholder — will be replaced with actual repair shop video -->
+        <div class="facility__video-placeholder reveal" style="--delay: 1">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span class="caption">Repair shop video coming soon</span>
+        </div>
+
+        <!-- Photo grid — placeholders until actual facility photos provided -->
+        <div class="facility__photos">
+          <div class="facility__photo-placeholder reveal" style="--delay: 2">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span class="caption">Facility photo 1</span>
+          </div>
+          <div class="facility__photo-placeholder reveal" style="--delay: 3">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span class="caption">Facility photo 2</span>
+          </div>
+          <div class="facility__photo-placeholder reveal" style="--delay: 4">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span class="caption">Facility photo 3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- ════════════════════════════════════════════════════════
      FOOTER
      ════════════════════════════════════════════════════════ -->
-<footer class="site-footer">
-  <a href="/">
-    <img class="site-footer__logo" src="assets/images/miliva-logo.png" alt="Miliva Inc">
-  </a>
-  <div class="site-footer__info caption">
-    &copy; 2026 Miliva Incorporated. All Rights Reserved.<br>
-    <a href="tel:+17736333720" class="site-footer__phone">+1 773 633 3720</a>
+<footer class="site-footer" id="contact">
+  <div class="site-footer__top">
+    <div class="site-footer__brand">
+      <a href="/">
+        <img class="site-footer__logo" src="assets/images/miliva-logo.png" alt="Miliva Inc">
+      </a>
+      <p class="site-footer__tagline caption">Built to Haul — Powered by Trust</p>
+    </div>
+    <nav class="site-footer__nav" aria-label="Footer navigation">
+      <a href="#benefits" class="site-footer__link">Benefits</a>
+      <a href="#about" class="site-footer__link">About</a>
+      <a href="#fleet" class="site-footer__link">Fleet</a>
+      <a href="#income" class="site-footer__link">Income</a>
+      <a href="#facility" class="site-footer__link">Facility</a>
+      <a href="https://forms.gle/PKBgkFvm8MaaaSSQ9" target="_blank" rel="noopener noreferrer" class="site-footer__link site-footer__link--accent">Apply Now</a>
+    </nav>
+    <div class="site-footer__contact-block">
+      <a href="tel:+17736333720" class="site-footer__phone">+1 773 633 3720</a>
+      <div class="eyebrow" style="font-size: 0.7rem; margin-top: 2px;">Illinois, USA</div>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <span class="caption">&copy; 2026 Miliva Incorporated. All Rights Reserved.</span>
   </div>
 </footer>
 
