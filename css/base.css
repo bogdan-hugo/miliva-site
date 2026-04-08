@@ -1,0 +1,157 @@
+/* ============================================================
+   MILIVA INC — BASE STYLES
+   Reset, typography, global element defaults.
+   Mobile-first: all rules target ≤767 px by default.
+   ============================================================ */
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── TYPOGRAPHY — HEADINGS ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  line-height: var(--leading-tight);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+h1 { font-size: var(--text-h1); font-weight: var(--weight-black); }
+h2 { font-size: var(--text-h2); font-weight: var(--weight-black); }
+h3 { font-size: var(--text-h3); font-weight: var(--weight-bold);  }
+h4 { font-size: var(--text-h4); font-weight: var(--weight-bold);  }
+h5 { font-size: var(--text-h5); font-weight: var(--weight-bold);  }
+h6 { font-size: var(--text-h6); font-weight: var(--weight-semibold); }
+
+/* Display heading (hero) */
+.display {
+  font-family: var(--font-heading);
+  font-size: var(--text-display);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-none);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+/* ── TYPOGRAPHY — BODY ── */
+p {
+  margin-bottom: var(--space-4);
+  max-width: 65ch; /* comfortable reading width */
+}
+
+p:last-child { margin-bottom: 0; }
+
+.lead {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+small, .caption {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-normal);
+}
+
+/* ── TYPOGRAPHY — ACCENT TEXT ── */
+.accent-text {
+  color: var(--accent);
+}
+
+.eyebrow {
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-widest);
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: var(--text-stat);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-none);
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-top: var(--space-1);
+}
+
+/* ── LINKS ── */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* ── LISTS ── */
+ul, ol {
+  list-style: none;
+}
+
+/* ── IMAGES ── */
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── SELECTION ── */
+::selection {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+/* ── FOCUS (ACCESSIBILITY) ── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ── SCROLLBAR (WEBKIT) ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-light);
+}

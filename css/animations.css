@@ -1,0 +1,181 @@
+/* ============================================================
+   MILIVA INC — ANIMATIONS & SCROLL EFFECTS
+   Scroll-triggered reveals, parallax utility, hover micro-interactions.
+   Driven by IntersectionObserver in js/main.js.
+   ============================================================ */
+
+
+/* ═══════════════════════════════════════════════════════════
+   SCROLL-REVEAL BASE
+   Elements start hidden and transition in when .is-visible
+   is added by the IntersectionObserver.
+   ═══════════════════════════════════════════════════════════ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--duration-scroll) var(--ease-out),
+    transform var(--duration-scroll) var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variant: slide from left */
+.reveal--left {
+  transform: translateX(-32px);
+}
+.reveal--left.is-visible {
+  transform: translateX(0);
+}
+
+/* Variant: slide from right */
+.reveal--right {
+  transform: translateX(32px);
+}
+.reveal--right.is-visible {
+  transform: translateX(0);
+}
+
+/* Variant: scale up */
+.reveal--scale {
+  transform: scale(0.95);
+}
+.reveal--scale.is-visible {
+  transform: scale(1);
+}
+
+/* Variant: fade only (no movement) */
+.reveal--fade {
+  transform: none;
+}
+.reveal--fade.is-visible {
+  opacity: 1;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   STAGGER DELAYS
+   Apply to children inside a grid/flex for sequential reveal.
+   Usage: <div class="reveal" style="--delay: 1">
+   ═══════════════════════════════════════════════════════════ */
+
+.reveal[style*="--delay"] {
+  transition-delay: calc(var(--delay, 0) * 80ms);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   PARALLAX UTILITY
+   Applied via JS — translateY is set as an inline style
+   based on scroll position. CSS just controls smoothness.
+   ═══════════════════════════════════════════════════════════ */
+
+.parallax {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* Parallax background image container */
+.parallax-bg {
+  position: absolute;
+  inset: -20% 0;    /* overflow to allow vertical travel */
+  will-change: transform;
+}
+
+.parallax-bg img,
+.parallax-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   HOVER MICRO-INTERACTIONS
+   ═══════════════════════════════════════════════════════════ */
+
+/* Subtle lift — used on cards, load images */
+.hover-lift {
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Image zoom inside container */
+.hover-zoom {
+  overflow: hidden;
+}
+.hover-zoom img {
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+.hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Glow border on hover */
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   GRADIENT OVERLAYS (for image sections)
+   ═══════════════════════════════════════════════════════════ */
+
+.overlay-gradient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Bottom fade — for text on image */
+.overlay-gradient--bottom {
+  background: linear-gradient(
+    to top,
+    rgba(27, 31, 35, 0.95) 0%,
+    rgba(27, 31, 35, 0.4) 40%,
+    transparent 70%
+  );
+}
+
+/* Full darken — for hero/parallax sections */
+.overlay-gradient--hero {
+  background: linear-gradient(
+    to bottom,
+    rgba(27, 31, 35, 0.5) 0%,
+    rgba(27, 31, 35, 0.7) 50%,
+    rgba(27, 31, 35, 0.9) 100%
+  );
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   REDUCED MOTION
+   Respect user OS preference — disable all animations.
+   ═══════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .parallax,
+  .parallax-bg {
+    transition: none;
+    will-change: auto;
+  }
+  .ticker-track {
+    animation: none;
+  }
+  .hover-lift:hover,
+  .hover-zoom:hover img {
+    transform: none;
+  }
+}
