@@ -22,10 +22,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- CSS -->
-<link rel="stylesheet" href="css/variables.css?v=14">
-<link rel="stylesheet" href="css/base.css?v=14">
-<link rel="stylesheet" href="css/components.css?v=14">
-<link rel="stylesheet" href="css/animations.css?v=14">
+<link rel="stylesheet" href="css/variables.css?v=15">
+<link rel="stylesheet" href="css/base.css?v=15">
+<link rel="stylesheet" href="css/components.css?v=15">
+<link rel="stylesheet" href="css/animations.css?v=15">
 </head>
 <body>
 
@@ -125,7 +125,7 @@
 <section class="section" id="benefits">
   <div class="container">
     <div class="section-header">
-      <div class="section-number">01</div>
+
       <div class="section-title">Why Miliva</div>
     </div>
 
@@ -188,7 +188,7 @@
 <section class="section section--alt" id="about">
   <div class="container">
     <div class="section-header">
-      <div class="section-number">02</div>
+
       <div class="section-title">About Miliva</div>
     </div>
 
@@ -228,12 +228,216 @@
 
 
 <!-- ════════════════════════════════════════════════════════
+     RECENT LOADS — Carousel
+     ════════════════════════════════════════════════════════ -->
+<section class="section" id="recent-loads">
+  <div class="container">
+    <div class="section-header">
+
+      <div class="section-title">Recent Loads</div>
+    </div>
+
+    <div class="loads-carousel reveal">
+      <!-- Carousel viewport -->
+      <div class="loads-carousel__track">
+
+        <!-- Load 1: CA → MT -->
+        <div class="load-slide" data-images="assets/images/loads/ca-mt-1.webp,assets/images/loads/ca-mt-2.webp,assets/images/loads/ca-mt-3.webp">
+          <div class="load-slide__gallery">
+            <div class="load-slide__img-wrap">
+              <img src="assets/images/loads/ca-mt-1.webp" alt="CA to MT load — Amazon Prime vans on car hauler" loading="lazy">
+            </div>
+            <div class="load-slide__dots">
+              <button class="load-slide__dot is-active" aria-label="Image 1"></button>
+              <button class="load-slide__dot" aria-label="Image 2"></button>
+              <button class="load-slide__dot" aria-label="Image 3"></button>
+            </div>
+          </div>
+          <div class="load-slide__info">
+            <div class="load-slide__route">
+              <span class="load-slide__origin">CA</span>
+              <svg class="load-slide__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <span class="load-slide__dest">MT</span>
+            </div>
+            <div class="load-slide__stats">
+              <div class="load-slide__stat">
+                <span class="load-slide__label">Gross</span>
+                <span class="load-slide__value load-slide__value--accent">$6,950</span>
+              </div>
+              <div class="load-slide__stat">
+                <span class="load-slide__label">Miles</span>
+                <span class="load-slide__value">1,518</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Load 2: IL → FL -->
+        <div class="load-slide" data-images="assets/images/loads/il-fl-1.webp">
+          <div class="load-slide__gallery">
+            <div class="load-slide__img-wrap">
+              <img src="assets/images/loads/il-fl-1.webp" alt="IL to FL load — yellow Chevrolet trucks on hotshot trailer" loading="lazy">
+            </div>
+          </div>
+          <div class="load-slide__info">
+            <div class="load-slide__route">
+              <span class="load-slide__origin">IL</span>
+              <svg class="load-slide__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <span class="load-slide__dest">FL</span>
+            </div>
+            <div class="load-slide__stats">
+              <div class="load-slide__stat">
+                <span class="load-slide__label">Gross</span>
+                <span class="load-slide__value load-slide__value--accent">$3,000</span>
+              </div>
+              <div class="load-slide__stat">
+                <span class="load-slide__label">Miles</span>
+                <span class="load-slide__value">1,130</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Load 3: IL → PA -->
+        <div class="load-slide" data-images="assets/images/loads/il-pa-1.webp">
+          <div class="load-slide__gallery">
+            <div class="load-slide__img-wrap">
+              <img src="assets/images/loads/il-pa-1.webp" alt="IL to PA load — Miliva truck at Flying J with loaded trailer" loading="lazy">
+            </div>
+          </div>
+          <div class="load-slide__info">
+            <div class="load-slide__route">
+              <span class="load-slide__origin">IL</span>
+              <svg class="load-slide__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <span class="load-slide__dest">PA</span>
+            </div>
+            <div class="load-slide__stats">
+              <div class="load-slide__stat">
+                <span class="load-slide__label">Gross</span>
+                <span class="load-slide__value load-slide__value--accent">$2,900</span>
+              </div>
+              <div class="load-slide__stat">
+                <span class="load-slide__label">Miles</span>
+                <span class="load-slide__value">820</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Load 4: IL → WA -->
+        <div class="load-slide" data-images="assets/images/loads/il-wa-1.webp,assets/images/loads/il-wa-2.webp,assets/images/loads/il-wa-3.webp">
+          <div class="load-slide__gallery">
+            <div class="load-slide__img-wrap">
+              <img src="assets/images/loads/il-wa-1.webp" alt="IL to WA load — loaded car hauler at gas station" loading="lazy">
+            </div>
+            <div class="load-slide__dots">
+              <button class="load-slide__dot is-active" aria-label="Image 1"></button>
+              <button class="load-slide__dot" aria-label="Image 2"></button>
+              <button class="load-slide__dot" aria-label="Image 3"></button>
+            </div>
+          </div>
+          <div class="load-slide__info">
+            <div class="load-slide__route">
+              <span class="load-slide__origin">IL</span>
+              <svg class="load-slide__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <span class="load-slide__dest">WA</span>
+            </div>
+            <div class="load-slide__stats">
+              <div class="load-slide__stat">
+                <span class="load-slide__label">Gross</span>
+                <span class="load-slide__value load-slide__value--accent">$6,444</span>
+              </div>
+              <div class="load-slide__stat">
+                <span class="load-slide__label">Miles</span>
+                <span class="load-slide__value">2,100</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Load 5: MI → NY -->
+        <div class="load-slide" data-images="assets/images/loads/mi-ny-1.webp">
+          <div class="load-slide__gallery">
+            <div class="load-slide__img-wrap">
+              <img src="assets/images/loads/mi-ny-1.webp" alt="MI to NY load — Prime van and SUVs on hotshot" loading="lazy">
+            </div>
+          </div>
+          <div class="load-slide__info">
+            <div class="load-slide__route">
+              <span class="load-slide__origin">MI</span>
+              <svg class="load-slide__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <span class="load-slide__dest">NY</span>
+            </div>
+            <div class="load-slide__stats">
+              <div class="load-slide__stat">
+                <span class="load-slide__label">Gross</span>
+                <span class="load-slide__value load-slide__value--accent">$1,980</span>
+              </div>
+              <div class="load-slide__stat">
+                <span class="load-slide__label">Miles</span>
+                <span class="load-slide__value">570</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Load 6: MI → OR -->
+        <div class="load-slide" data-images="assets/images/loads/mi-or-1.webp,assets/images/loads/mi-or-2.webp,assets/images/loads/mi-or-3.webp">
+          <div class="load-slide__gallery">
+            <div class="load-slide__img-wrap">
+              <img src="assets/images/loads/mi-or-1.webp" alt="MI to OR load — Miliva truck at sunset with full trailer" loading="lazy">
+            </div>
+            <div class="load-slide__dots">
+              <button class="load-slide__dot is-active" aria-label="Image 1"></button>
+              <button class="load-slide__dot" aria-label="Image 2"></button>
+              <button class="load-slide__dot" aria-label="Image 3"></button>
+            </div>
+          </div>
+          <div class="load-slide__info">
+            <div class="load-slide__route">
+              <span class="load-slide__origin">MI</span>
+              <svg class="load-slide__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <span class="load-slide__dest">OR</span>
+            </div>
+            <div class="load-slide__stats">
+              <div class="load-slide__stat">
+                <span class="load-slide__label">Gross</span>
+                <span class="load-slide__value load-slide__value--accent">$8,500</span>
+              </div>
+              <div class="load-slide__stat">
+                <span class="load-slide__label">Miles</span>
+                <span class="load-slide__value">2,560</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel navigation -->
+      <div class="loads-carousel__nav">
+        <button class="loads-carousel__btn loads-carousel__btn--prev" aria-label="Previous load">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="loads-carousel__counter">
+          <span class="loads-carousel__current">1</span> / <span class="loads-carousel__total">6</span>
+        </div>
+        <button class="loads-carousel__btn loads-carousel__btn--next" aria-label="Next load">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════
      DASH PARTNERSHIP
      ════════════════════════════════════════════════════════ -->
 <section class="section" id="dash">
   <div class="container">
     <div class="section-header">
-      <div class="section-number">03</div>
+
       <div class="section-title">DASH Partnership</div>
     </div>
 
@@ -269,7 +473,7 @@
 <section class="section section--alt" id="fleet">
   <div class="container">
     <div class="section-header">
-      <div class="section-number">04</div>
+
       <div class="section-title">Fleet &amp; Equipment</div>
     </div>
 
@@ -356,7 +560,7 @@
 <section class="section" id="driver-benefits">
   <div class="container">
     <div class="section-header">
-      <div class="section-number">05</div>
+
       <div class="section-title">Driver Benefits</div>
     </div>
 
@@ -428,7 +632,7 @@
 <section class="section section--alt" id="income">
   <div class="container">
     <div class="section-header">
-      <div class="section-number">06</div>
+
       <div class="section-title">Gross Income</div>
     </div>
 
@@ -482,7 +686,7 @@
 <section class="section section--alt" id="facility">
   <div class="container">
     <div class="section-header">
-      <div class="section-number">07</div>
+
       <div class="section-title">Repair Facility</div>
     </div>
 
@@ -534,6 +738,7 @@
     <nav class="site-footer__nav" aria-label="Footer navigation">
       <a href="#benefits" class="site-footer__link">Benefits</a>
       <a href="#about" class="site-footer__link">About</a>
+      <a href="#recent-loads" class="site-footer__link">Recent Loads</a>
       <a href="#fleet" class="site-footer__link">Fleet</a>
       <a href="#income" class="site-footer__link">Income</a>
       <a href="#facility" class="site-footer__link">Facility</a>
@@ -562,6 +767,6 @@
 
 
 <!-- JS -->
-<script src="js/main.js"></script>
+<script src="js/main.js?v=15"></script>
 </body>
 </html>
