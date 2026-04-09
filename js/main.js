@@ -238,7 +238,6 @@
   function init() {
     initReveal();
     initParallax();
-    initTicker();
     initSmoothAnchors();
     initLoadsCarousel();
   }
