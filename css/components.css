@@ -837,6 +837,7 @@
   line-height: 1.1;
   text-decoration: none;
   display: block;
+  white-space: nowrap;
 }
 
 .site-header__phone:hover {
@@ -1029,14 +1030,14 @@
     margin-bottom: var(--space-10);
   }
 
-  /* Right column — stat cards stacked vertically */
+  /* Right column — stat cards stacked vertically (compact) */
   .hero__stats {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
+    gap: var(--space-2);
     margin-top: 0;
     flex-shrink: 0;
-    width: 200px;
+    width: 168px;
     position: relative;
     z-index: 2;
   }
@@ -1047,7 +1048,7 @@
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(240, 242, 244, 0.12);
     border-radius: var(--radius-lg);
-    padding: var(--space-5) var(--space-6);
+    padding: var(--space-3) var(--space-4);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     transition:
       background var(--duration-base) var(--ease-out),
@@ -1062,7 +1063,11 @@
   }
 
   .hero__stat .stat-number {
-    font-size: var(--text-stat);
+    font-size: var(--text-h2);
+  }
+
+  .hero__stat .stat-label {
+    font-size: var(--text-xs);
   }
 }
 
@@ -1072,7 +1077,7 @@
   }
 
   .hero__stats {
-    width: 220px;
+    width: 184px;
   }
 }
 
@@ -1284,28 +1289,39 @@
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  gap: var(--space-3);
-  padding-bottom: var(--space-2);
+  gap: var(--space-6);
+  padding-bottom: var(--space-4);
+  padding-right: var(--space-4);
 }
 
 .loads-carousel__track::-webkit-scrollbar {
   display: none;
 }
 
-/* Individual slide */
+/* Individual slide — full card treatment (Approach 3)
+   Each load is a contained card with background, border,
+   and shadow so adjacent loads never visually merge while
+   scrolling horizontally. */
 .load-slide {
   flex: 0 0 85%;
   min-width: 0;
   scroll-snap-align: start;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Image gallery area */
+/* Image gallery area — sits at the top of the card with
+   matching top radius; no margin since the card already
+   encloses it. */
 .load-slide__gallery {
   position: relative;
-  border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--bg-surface);
-  margin-bottom: var(--space-4);
+  background: var(--bg-elevated);
 }
 
 .load-slide__img-wrap {
@@ -1356,13 +1372,14 @@
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* Load info bar */
+/* Load info bar — sits inside the card with proper internal
+   padding so the content breathes within the card boundary. */
 .load-slide__info {
   display: flex;
   align-items: last baseline;
   justify-content: space-between;
-  gap: var(--space-3);
-  padding: var(--space-4) var(--space-2);
+  gap: var(--space-4);
+  padding: var(--space-5);
 }
 
 .load-slide__route {
@@ -1833,18 +1850,12 @@
 
 .site-footer__brand {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+  align-items: center;
 }
 
 .site-footer__logo {
   height: 36px;
   width: auto;
-}
-
-.site-footer__tagline {
-  color: var(--text-muted);
-  margin: 0;
 }
 
 .site-footer__nav {
@@ -1876,10 +1887,6 @@
   color: var(--accent-hover);
 }
 
-.site-footer__contact-block {
-  text-align: left;
-}
-
 .site-footer__bottom {
   border-top: 1px solid var(--border);
   padding: var(--space-4) var(--content-padding);
@@ -1889,16 +1896,7 @@
 @media (min-width: 768px) {
   .site-footer__top {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-  }
-
-  .site-footer__nav {
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-
-  .site-footer__contact-block {
-    text-align: right;
   }
 }
