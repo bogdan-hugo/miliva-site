@@ -13,6 +13,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* offset for sticky header */
   -webkit-text-size-adjust: 100%;
 }
 

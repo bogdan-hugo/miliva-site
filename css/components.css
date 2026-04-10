@@ -814,9 +814,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-4);
   position: sticky;
   top: 0;
   z-index: var(--z-sticky);
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .site-header__logo {
@@ -826,6 +833,7 @@
 
 .site-header__contact {
   text-align: right;
+  flex-shrink: 0;
 }
 
 .site-header__phone {
@@ -849,6 +857,77 @@
   font-size: 0.95rem;
   letter-spacing: 0.13em;
   line-height: 1.1;
+}
+
+/* ── Primary navigation ──
+   Hidden on mobile (the existing mobile header stays untouched).
+   Desktop (≥1024px): inline horizontal row between brand and contact.
+*/
+.site-header__nav {
+  display: none;
+}
+
+.site-header__link {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-semibold);
+  color: var(--text-body);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.site-header__link:hover,
+.site-header__link:focus-visible {
+  color: var(--accent);
+}
+
+.site-header__link--accent {
+  color: var(--accent);
+}
+
+.site-header__link--accent:hover,
+.site-header__link--accent:focus-visible {
+  color: var(--accent-hover);
+}
+
+@media (min-width: 1024px) {
+  .site-header__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-6);
+    flex: 1;
+    justify-content: center;
+  }
+
+  .site-header__link {
+    font-size: var(--text-sm);
+    position: relative;
+  }
+
+  /* Subtle accent underline on hover/focus for desktop links */
+  .site-header__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--duration-base) var(--ease-out);
+  }
+
+  .site-header__link:hover::after,
+  .site-header__link:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  .site-header__link--accent::after {
+    background: var(--accent-hover);
+  }
 }
 
 

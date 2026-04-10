@@ -94,19 +94,27 @@
 
 
   /* ── SMOOTH SCROLL FOR ANCHOR LINKS ──
-     (fallback for browsers without CSS scroll-behavior)
+     Honors the sticky header height so target sections never
+     end up hidden underneath it. Falls back gracefully on
+     browsers without CSS scroll-behavior.
   */
   function initSmoothAnchors() {
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
       link.addEventListener('click', function (e) {
-        var target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        var hash = this.getAttribute('href');
+        if (!hash || hash === '#') return;
+        var target = document.querySelector(hash);
+        if (!target) return;
+        e.preventDefault();
+        var header = document.querySelector('.site-header');
+        var headerOffset = header ? header.offsetHeight : 0;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
       });
     });
   }
+
+
 
 
   /* ── LOADS CAROUSEL ──
